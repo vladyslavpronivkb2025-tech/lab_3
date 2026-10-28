@@ -1,0 +1,114 @@
+/* Управління Box Model */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #111827;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 2px solid #10b981;
+}
+
+.subtitle {
+    color: #94a3b8;
+    margin: 5px 0 0 0;
+}
+
+/* Використання ID та Grid макету */
+#content {
+    max-width: 900px;
+    width: 100%;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+}
+
+/* Перша секція ("Про мене") на всю ширину */
+#content .card:first-child {
+    grid-column: 1 / -1;
+}
+
+/* Стилізація карток з Box Model (padding, border, margin) */
+.card {
+    background-color: #1e293b;
+    padding: 20px;
+    border: 1px solid #334155;
+    border-left: 4px solid #10b981;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+h2 {
+    margin-top: 0;
+    color: #38bdf8;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 6px;
+}
+
+ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Селектори атрибутів та псевдокласи */
+a {
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #34d399;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: 2px dashed #38bdf8;
+}
+
+a[target="_blank"] {
+    font-family: monospace;
+}
+
+.footer {
+    background-color: #111827;
+    color: #64748b;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #1e293b;
+}
+
+/* Медіазапит для вузьких екранів (мобільні) */
+@media (max-width: 768px) {
+    #content {
+        grid-template-columns: 1fr;
+        margin: 15px auto;
+    }
+}
